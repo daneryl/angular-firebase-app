@@ -16,8 +16,9 @@
 
 <script type="text/ng-template"  id="tree_item_renderer.html">
     <div>
-      {{section.title}}
+    handle
     </div>
+      <input ng-model='section.title'/>
     <!--<button ng-click="add(data)">Add node</button>-->
     <!--<button ng-click="delete(data)" ng-show="data.nodes.length > 0">Delete nodes</button>-->
     <ul ui-tree-nodes="" ng-model="section.sections">
