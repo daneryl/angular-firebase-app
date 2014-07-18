@@ -31,4 +31,8 @@ angular.module('tablaContenidos')
     }]
   }
 
+  $scope.$watch('book', function(value) {
+    console.log(value);
+  }, true)
+
 });

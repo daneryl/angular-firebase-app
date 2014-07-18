@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tablaContenidos', ['ngAnimate', 'ngSanitize', 'ngRoute'])
+angular.module('tablaContenidos', ['ngAnimate', 'ngSanitize', 'ngRoute', 'ui.tree'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

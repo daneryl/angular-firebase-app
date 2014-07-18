@@ -3,10 +3,12 @@
     <div class="row well well-lg">
       <div class="col-md-12 col-md-offset-4">
         <h1>{{book.title}}</h1>
-        <ul sortable class="toc">
-          <li ng-repeat="section in book.sections" ng-include="'tree_item_renderer.html'">
-          </li>
-        </ul>
+        <div ui-tree>
+          <ul ui-tree-nodes="" ng-model="book.sections" class="toc">
+            <li ng-repeat="section in book.sections" ng-include="'tree_item_renderer.html'" ui-tree-node>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
@@ -18,7 +20,7 @@
     </div>
     <!--<button ng-click="add(data)">Add node</button>-->
     <!--<button ng-click="delete(data)" ng-show="data.nodes.length > 0">Delete nodes</button>-->
-    <ul>
-        <li ng-repeat="section in section.sections" ng-include="'tree_item_renderer.html'"></li>
+    <ul ui-tree-nodes="" ng-model="section.sections">
+        <li ng-repeat="section in section.sections" ng-include="'tree_item_renderer.html'" ui-tree-node></li>
     </ul>
 </script>
