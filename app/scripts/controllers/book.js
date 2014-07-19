@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-.controller('MainCtrl', function ($scope) {
+.controller('book', function ($scope) {
 
   $scope.book = {
     title: 'Libro 1',
