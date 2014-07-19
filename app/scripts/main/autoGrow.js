@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('tablaContenidos')
+angular.module('app')
 .directive('autoGrow', function(){
 
   return {
