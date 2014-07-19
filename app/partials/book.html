@@ -3,7 +3,7 @@
     <div ui-tree-options class="col-md-6 col-md-offset-4">
       <h1>{{book.title}}</h1>
       <div ui-tree="uiTreeOptions">
-        <ul ui-tree-nodes="" ng-model="book.sections" class="toc">
+        <ul ng-init="parent = book.sections;" ui-tree-nodes="" ng-model="book.sections" class="toc">
           <li class="animate" ng-repeat="section in book.sections" ng-include="'tree_item_renderer.html'" ui-tree-node>
           </li>
         </ul>
@@ -12,16 +12,19 @@
   </div>
 </div>
 
-<button ng-click="delete()">delete</button>
-
 <script type="text/ng-template"  id="tree_item_renderer.html">
-            <label ui-tree-handle>
-              1.2.3
-            </label>
-            <input placeholder="Título" auto-grow class="toc-content" ng-model="section.title"/>
-    <!--<button ng-click="add(data)">Add node</button>-->
-    <!--<button ng-click="delete(data)" ng-show="data.nodes.length > 0">Delete nodes</button>-->
-    <ul ui-tree-nodes="" ng-model="section.sections">
+    <div>
+      <label ui-tree-handle>
+        1.2.3
+      </label>
+      <input placeholder="Título" auto-grow class="toc-content" ng-model="section.title"/>
+      <span class="controls">
+        <span class="glyphicon glyphicon-plus add"ng-click="add(parent, $index+1)"></span>
+        <span class=""ng-click="add_inside(section)">inside</span>
+        <span mark-node-on-hover class="glyphicon glyphicon-trash remove" ng-click="remove(section.sections, $index)"></span>
+      </span>
+    </div>
+    <ul ng-init="parent = section.sections" ui-tree-nodes="" ng-model="section.sections" >
         <li class="animate" ng-repeat="section in section.sections" ng-include="'tree_item_renderer.html'" ui-tree-node></li>
     </ul>
 </script>

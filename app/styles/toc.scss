@@ -5,6 +5,22 @@ input.toc-content {
   width:50px;
 }
 
+li.to-delete {
+    background: #FFF2F2;
+}
+
+span.controls {
+  visibility:hidden;
+}
+
+span.controls span {
+  cursor: pointer;
+}
+
+ul.toc li div:hover > span.controls {
+  visibility:visible;
+}
+
 //ANIMATION
 .animate.ng-enter, .animate.ng-leave {
   -webkit-transition: 150ms linear all;

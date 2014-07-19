@@ -8,35 +8,49 @@ angular.module('app')
     sections: [{
       title: 'Introducción',
       sections:[{
-        title: 'Motivación'
+        title: 'Motivación',
+        sections: []
       },{
         title:'Reseña historica',
         sections:[{
-          title: 'Origen'
+          title: 'Origen',
+          sections: []
         },{
-          title:'Trabajos preliminares'
+          title:'Trabajos preliminares',
+          sections: []
         }]
       },{
-        title: 'Soluciones actuales'
+        title: 'Soluciones actuales',
+        sections: []
       },{
-        title: 'Objetivos de este libro Objetivos de este libro'
+        title: 'Objetivos de este libro Objetivos de este libro',
+        sections: []
       }]
     },{
       title: 'Requisitos',
       sections: [{
-        title: 'Hardware'
+        title: 'Hardware',
+        sections: []
       }, {
-        title: 'Software'
+        title: 'Software',
+        sections: []
       }]
     }]
   };
 
-  $scope.delete = function() {
-    $scope.book.sections = _.without($scope.book.sections, $scope.book.sections[0]);
+  $scope.add = function(sections, index) {
+    var item = {title: '', sections:[]};
+    sections.splice(index, 0, item);
   };
 
-  $scope.$watch('book', function() {
-    //console.log(value);
-  }, true);
+  $scope.add_inside = function(section, index) {
+    var item = {title: '', sections:[]};
+    section.sections = section.sections || [];
+    section.sections.push(item);
+  };
+
+  $scope.remove = function(sections, to_delete) {
+    sections.splice(to_delete, 1);
+  };
 
 });
