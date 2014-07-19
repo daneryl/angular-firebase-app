@@ -31,8 +31,12 @@ angular.module('tablaContenidos')
     }]
   }
 
+  $scope.delete = function() {
+    $scope.book.sections = _.without($scope.book.sections, $scope.book.sections[0])
+  }
+
   $scope.$watch('book', function(value) {
-    console.log(value);
+    //console.log(value);
   }, true)
 
 });

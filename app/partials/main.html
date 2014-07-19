@@ -4,7 +4,7 @@
       <h1>{{book.title}}</h1>
       <div ui-tree>
         <ul ui-tree-nodes="" ng-model="book.sections" class="toc">
-          <li ng-repeat="section in book.sections" ng-include="'tree_item_renderer.html'" ui-tree-node>
+          <li class="animate" ng-repeat="section in book.sections" ng-include="'tree_item_renderer.html'" ui-tree-node>
           </li>
         </ul>
       </div>
@@ -12,14 +12,16 @@
   </div>
 </div>
 
+<button ng-click="delete()">delete</button>
+
 <script type="text/ng-template"  id="tree_item_renderer.html">
-            <label>
+            <label ui-tree-handle>
               1.2.3
             </label>
-            <input class="toc-content" ng-model="section.title"/>
+            <input placeholder="Título" auto-grow class="toc-content" ng-model="section.title"/>
     <!--<button ng-click="add(data)">Add node</button>-->
     <!--<button ng-click="delete(data)" ng-show="data.nodes.length > 0">Delete nodes</button>-->
     <ul ui-tree-nodes="" ng-model="section.sections">
-        <li ng-repeat="section in section.sections" ng-include="'tree_item_renderer.html'" ui-tree-node></li>
+        <li class="animate" ng-repeat="section in section.sections" ng-include="'tree_item_renderer.html'" ui-tree-node></li>
     </ul>
 </script>

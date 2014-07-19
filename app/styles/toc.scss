@@ -1,0 +1,23 @@
+input.toc-content {
+  border: none;
+  background-color: transparent;
+  outline:0;
+  width:50px;
+}
+
+//ANIMATION
+.animate.ng-enter, .animate.ng-leave {
+  -webkit-transition: 150ms linear all;
+  transition: 150ms linear all;
+}
+
+.animate.ng-enter.ng-enter-active, .animate.ng-leave {
+  max-height:500px;
+  line-height:10px;
+  left: 0;
+}
+.animate.ng-leave.ng-leave-active, .animate.ng-enter {
+  max-height:0px;
+  line-height:0px;
+  left: 500px;
+}
