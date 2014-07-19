@@ -29,14 +29,14 @@ angular.module('tablaContenidos')
         title: 'Software'
       }]
     }]
-  }
+  };
 
   $scope.delete = function() {
-    $scope.book.sections = _.without($scope.book.sections, $scope.book.sections[0])
-  }
+    $scope.book.sections = _.without($scope.book.sections, $scope.book.sections[0]);
+  };
 
-  $scope.$watch('book', function(value) {
+  $scope.$watch('book', function() {
     //console.log(value);
-  }, true)
+  }, true);
 
 });

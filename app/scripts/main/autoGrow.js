@@ -5,7 +5,7 @@ angular.module('tablaContenidos')
 
   return {
     restrict: 'A',
-    link: function(scope, element, attrs) {
+    link: function(scope, element) {
 
       scope.$watch(function() {
         return $(element).val();
@@ -15,7 +15,7 @@ angular.module('tablaContenidos')
           $(element).autoGrow(5);
         }
 
-      })
+      });
     }
   };
 });
