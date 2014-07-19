@@ -1,24 +1,22 @@
-<div class="jumbotron">
-  <div class="container">
-    <div class="row well well-lg">
-      <div class="col-md-12 col-md-offset-4">
-        <h1>{{book.title}}</h1>
-        <div ui-tree>
-          <ul ui-tree-nodes="" ng-model="book.sections" class="toc">
-            <li ng-repeat="section in book.sections" ng-include="'tree_item_renderer.html'" ui-tree-node>
-            </li>
-          </ul>
-        </div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-4">
+      <h1>{{book.title}}</h1>
+      <div ui-tree>
+        <ul ui-tree-nodes="" ng-model="book.sections" class="toc">
+          <li ng-repeat="section in book.sections" ng-include="'tree_item_renderer.html'" ui-tree-node>
+          </li>
+        </ul>
       </div>
     </div>
   </div>
 </div>
 
 <script type="text/ng-template"  id="tree_item_renderer.html">
-    <div>
-    handle
-    </div>
-      <input ng-model='section.title'/>
+            <label>
+              1.2.3
+            </label>
+            <input class="toc-content" ng-model="section.title"/>
     <!--<button ng-click="add(data)">Add node</button>-->
     <!--<button ng-click="delete(data)" ng-show="data.nodes.length > 0">Delete nodes</button>-->
     <ul ui-tree-nodes="" ng-model="section.sections">

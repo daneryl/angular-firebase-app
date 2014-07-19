@@ -10,12 +10,12 @@ angular.module('tablaContenidos')
       var original_parent;
 
       $(element).nestedSortable({
-        handle: 'div',
+        handle: 'label',
         placeholder: 'placeholder',
         revert: 150,
         items: 'li',
         listType:'ul',
-        toleranceElement: '> div'
+        toleranceElement: '> label'
       });
 
       $(element).on("sortstop", function( event, ui ) {
