@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
-    <div class="col-md-6 col-md-offset-4">
+    <div ui-tree-options class="col-md-6 col-md-offset-4">
       <h1>{{book.title}}</h1>
-      <div ui-tree>
+      <div ui-tree="uiTreeOptions">
         <ul ui-tree-nodes="" ng-model="book.sections" class="toc">
           <li class="animate" ng-repeat="section in book.sections" ng-include="'tree_item_renderer.html'" ui-tree-node>
           </li>
