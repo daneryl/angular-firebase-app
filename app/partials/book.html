@@ -19,8 +19,8 @@
       </label>
       <input placeholder="Título" auto-grow class="toc-content" ng-model="section.title"/>
       <span class="controls">
-        <span class="glyphicon glyphicon-plus add"ng-click="add(parent, $index+1)"></span>
-        <span class=""ng-click="add_inside(section)">inside</span>
+        <span add-placeholder class="glyphicon glyphicon-plus add"ng-click="add(parent, $index+1)"></span>
+        <span class="" add-placeholder-inside ng-click="add_inside(section)">inside</span>
         <span mark-node-on-hover class="glyphicon glyphicon-trash remove" ng-click="remove(section.sections, $index)"></span>
       </span>
     </div>
