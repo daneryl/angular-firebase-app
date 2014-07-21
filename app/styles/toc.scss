@@ -5,13 +5,30 @@ input.toc-content {
   width:50px;
 }
 
+li[collapsed=true] ul {
+  display:none;
+}
+
 li.to-delete {
     background: #FFF2F2;
 }
 
 li.placeholder {
-  background: #f0f9ff;
+  background: #D6FFE0;
   padding-left:5px;
+}
+
+ul.mark-section {
+  border-left:1px dotted black;
+  margin-left:-1px !important;
+}
+
+ul.toc li > ul {
+  margin-left:20px !important;
+}
+
+ul.toc ul.mark-section {
+  margin-left:19px !important;
 }
 
 span.controls {
@@ -21,6 +38,11 @@ span.controls {
 span.controls span {
   cursor: pointer;
 }
+
+ul.toc, ul.toc ul {
+  padding:0 !important;
+}
+
 
 ul.toc li div:hover > span.controls {
   visibility:visible;

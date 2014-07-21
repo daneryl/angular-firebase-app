@@ -49,8 +49,13 @@ angular.module('app')
     section.sections.push(item);
   };
 
-  $scope.remove = function(sections, to_delete) {
-    sections.splice(to_delete, 1);
-  };
+  //$scope.remove = function(sections, to_delete) {
+    //console.log('lalal');
+    //sections.splice(to_delete, 1);
+  //};
 
+  $scope.toggle = function(scope) {
+    console.log(scope);
+    scope.toggle();
+  }
 });
