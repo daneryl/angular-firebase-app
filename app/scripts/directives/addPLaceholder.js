@@ -13,13 +13,13 @@ angular.module('app')
 
       $(element).on('mouseenter', function() {
         var parent = $(element).parents('li').eq(0);
-        section.addClass('mark-section')
+        section.addClass('mark-section');
         placeholder.insertAfter(parent);
       });
 
       $(element).on('mouseleave', function() {
         placeholder.detach();
-        section.removeClass('mark-section')
+        section.removeClass('mark-section');
       });
 
     }

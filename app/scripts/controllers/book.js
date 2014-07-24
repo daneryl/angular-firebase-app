@@ -43,19 +43,10 @@ angular.module('app')
     sections.splice(index, 0, item);
   };
 
-  $scope.add_inside = function(section, index) {
+  $scope.add_inside = function(section) {
     var item = {title: '', sections:[]};
     section.sections = section.sections || [];
     section.sections.push(item);
   };
 
-  //$scope.remove = function(sections, to_delete) {
-    //console.log('lalal');
-    //sections.splice(to_delete, 1);
-  //};
-
-  $scope.toggle = function(scope) {
-    console.log(scope);
-    scope.toggle();
-  }
 });

@@ -14,6 +14,9 @@
 
 <script type="text/ng-template"  id="tree_item_renderer.html">
     <div>
+      <span  
+        ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed, 'placeholder': !section.sections.length}" 
+        class="glyphicon glyphicon-chevron-down" ng-click="toggle()"></span>
       <label ui-tree-handle>
         1.2.3
       </label>
@@ -22,7 +25,6 @@
         <span add-placeholder class="glyphicon glyphicon-plus add"ng-click="add(parent, $index+1)"></span>
         <span class="glyphicon glyphicon-indent-left" add-placeholder-inside ng-click="add_inside(section)"></span>
         <span mark-node-on-hover class="glyphicon glyphicon-trash remove" ng-click="remove(section.sections, $index)"></span>
-        <span ng-click="toggle()">toggle</span>
       </span>
     </div>
     <ul ng-init="parent = section.sections" ui-tree-nodes="" ng-model="section.sections" >

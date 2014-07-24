@@ -3,6 +3,14 @@ input.toc-content {
   background-color: transparent;
   outline:0;
   width:50px;
+  padding-left:3px;
+  transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+}
+
+input.toc-content:focus {
+  border-color: #66afe9;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(102, 175, 233, 0.6);
 }
 
 li[collapsed=true] ul {
@@ -64,3 +72,14 @@ ul.toc li div:hover > span.controls {
   line-height:0px;
   left: 500px;
 }
+
+span.glyphicon-chevron-down, span.glyphicon-chevron-right{
+  color:#E3E3E3;
+  cursor:pointer;
+}
+
+span.glyphicon-chevron-down.placeholder, span.glyphicon-chevron-right.placeholder {
+  visibility:hidden;
+}
+
+

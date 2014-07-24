@@ -66,11 +66,4 @@ describe('Book controller', function () {
     });
   });
 
-  describe('remove()', function(){
-    it('should remove a section based on parent', function(){
-      scope.remove(scope.book.sections, 1);
-      expect(scope.book.sections[1]).not.toBeDefined();
-    });
-  });
-
 });
