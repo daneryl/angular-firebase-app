@@ -20,9 +20,11 @@
       <label ui-tree-handle>
         1.2.3
       </label>
-      <input placeholder="Título" auto-grow class="toc-content" ng-model="section.title" init-focus autofocus/>
+      <input  auto-grow init-focus autofocus
+              on-enter="add(parent, $index+1)"
+              placeholder="Título" class="toc-content" ng-model="section.title"/>
       <span class="controls">
-        <span add-placeholder class="glyphicon glyphicon-plus add"ng-click="add(parent, $index+1)"></span>
+        <span add-placeholder class="glyphicon glyphicon-plus add" ng-click="add(parent, $index+1)"></span>
         <span class="glyphicon glyphicon-indent-left" add-placeholder-inside ng-click="add_inside(section)"></span>
         <span mark-node-on-hover class="glyphicon glyphicon-trash remove" ng-click="remove(section.sections, $index)"></span>
       </span>

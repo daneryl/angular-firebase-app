@@ -1,7 +1,10 @@
 'use strict';
 angular.module('app')
 .directive('initFocus', function() {
-  return function(scope, elm) {
-    elm.focus();
+  return {
+    priority:999999,
+    link: function(scope, elm) {
+      $(elm).trigger('focus');
+    }
   };
 });

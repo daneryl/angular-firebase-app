@@ -4,7 +4,9 @@ angular.module('app', [
   'ngAnimate', 
   'ngSanitize', 
   'ngRoute', 
-  'ui.tree' ])
+  'ui.tree',
+  'cfp.hotkeys'
+])
   .config(function ($routeProvider) {
     $routeProvider
     .when('/', {
