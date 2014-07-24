@@ -1,7 +1,6 @@
-
 'use strict';
 
-describe('Directive: alert', function() {
+describe('Directive: uiTreeOptions', function() {
 
   var scope;
   var animate;

@@ -14,13 +14,13 @@
 
 <script type="text/ng-template"  id="tree_item_renderer.html">
     <div>
-      <span  
-        ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed, 'placeholder': !section.sections.length}" 
+      <span
+        ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed, 'placeholder': !section.sections.length}"
         class="glyphicon glyphicon-chevron-down" ng-click="toggle()"></span>
       <label ui-tree-handle>
         1.2.3
       </label>
-      <input placeholder="Título" auto-grow class="toc-content" ng-model="section.title"/>
+      <input placeholder="Título" auto-grow class="toc-content" ng-model="section.title" init-focus autofocus/>
       <span class="controls">
         <span add-placeholder class="glyphicon glyphicon-plus add"ng-click="add(parent, $index+1)"></span>
         <span class="glyphicon glyphicon-indent-left" add-placeholder-inside ng-click="add_inside(section)"></span>
