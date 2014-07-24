@@ -99,8 +99,14 @@ span.glyphicon-chevron-down.placeholder, span.glyphicon-chevron-right.placeholde
   padding-left:30px;
   min-height:500px;
   background: white url('../images/texture.png');
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /*.level-0  input {*/
-  /*font-size:1.2em;*/
+/*font-size:1.2em;*/
 /*}*/
