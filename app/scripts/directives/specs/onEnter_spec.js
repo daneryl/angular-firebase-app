@@ -4,7 +4,7 @@ describe('Directive: onEnter', function() {
 
   var scope;
   var element;
-  var hotkeys = {add:function() {}};
+  var hotkeys = {add:function() {},  del:function() {}};
 
   beforeEach(module('app'));
 
@@ -20,6 +20,7 @@ describe('Directive: onEnter', function() {
     scope.$digest();
 
     spyOn(hotkeys, 'add');
+    spyOn(hotkeys, 'del');
     spyOn(scope, 'method');
   }));
 
@@ -31,7 +32,14 @@ describe('Directive: onEnter', function() {
 
       expect(event_added.combo).toBe('enter');
       expect(scope.method).toHaveBeenCalled();
+    });
+  });
 
+  describe('on blur', function(){
+    it('should remove enter event', function(){
+      $(element).triggerHandler('blur');
+
+      expect(hotkeys.del).toHaveBeenCalledWith('enter');
     });
   });
 

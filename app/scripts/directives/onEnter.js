@@ -16,7 +16,7 @@ angular.module('app')
     });
 
     element.on('blur', function() {
-      console.log('blur');
+      hotkeys.del('enter');
     });
 
   };
