@@ -1,6 +1,5 @@
-<div class="container">
   <div class="row">
-    <div ui-tree-options class="col-md-6 col-md-offset-4">
+    <div ui-tree-options class="col-md-6 col-md-offset-3 site">
       <h1>{{book.title}}</h1>
       <div ui-tree="uiTreeOptions">
         <ul ng-init="parent = book.sections;" ui-tree-nodes="" ng-model="book.sections" class="toc">
@@ -10,10 +9,9 @@
       </div>
     </div>
   </div>
-</div>
 
-<script type="text/ng-template"  id="tree_item_renderer.html">
-    <div>
+  <script type="text/ng-template"  id="tree_item_renderer.html">
+<div class="level-{{$index}}">
       <span
         ng-class="{'glyphicon-chevron-right': collapsed, 'glyphicon-chevron-down': !collapsed, 'placeholder': !section.sections.length}"
         class="glyphicon glyphicon-chevron-down" ng-click="toggle()"></span>
@@ -22,6 +20,7 @@
       </label>
       <input  auto-grow init-focus autofocus
               on-enter="add(parent, $index+1)"
+              on-shift-enter="add_inside(section)"
               placeholder="Título" class="toc-content" ng-model="section.title"/>
       <span class="controls">
         <span add-placeholder class="glyphicon glyphicon-plus add" ng-click="add(parent, $index+1)"></span>
@@ -32,4 +31,4 @@
     <ul ng-init="parent = section.sections" ui-tree-nodes="" ng-model="section.sections" >
         <li class="animate" ng-repeat="section in section.sections" ng-include="'tree_item_renderer.html'" ui-tree-node></li>
     </ul>
-</script>
+  </script>

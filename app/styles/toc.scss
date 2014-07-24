@@ -1,3 +1,6 @@
+body {
+  background-color:lightgrey;
+}
 input.toc-content {
   border: none;
   background-color: transparent;
@@ -82,4 +85,22 @@ span.glyphicon-chevron-down.placeholder, span.glyphicon-chevron-right.placeholde
   visibility:hidden;
 }
 
+.site h1 {
+  padding-top:10px;
+  padding-bottom:20px;
+}
 
+.site {
+  background: white;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  box-shadow: 5px 5px 5px #2f2f2f;
+  padding-bottom:30px;
+  padding-left:30px;
+  min-height:500px;
+  background: white url('../images/texture.png');
+}
+
+/*.level-0  input {*/
+  /*font-size:1.2em;*/
+/*}*/
