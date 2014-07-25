@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('app')
-.controller('book', function ($scope) {
+.controller('book', function ($scope, updateNumeration) {
 
   $scope.book = {
     title: 'Libro 1',
@@ -37,6 +37,12 @@ angular.module('app')
       }]
     }]
   };
+
+  updateNumeration($scope.book.sections);
+
+  $scope.$watch('book.sections', function() {
+    updateNumeration($scope.book.sections);
+  }, true);
 
   $scope.add = function(sections, index) {
     var item = {title: '', sections:[]};
