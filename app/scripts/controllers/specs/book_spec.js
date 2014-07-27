@@ -10,6 +10,13 @@ describe('Book controller', function () {
   beforeEach(inject(function($controller, $rootScope) {
     scope = $rootScope.$new();
 
+    updateNumeration = jasmine.createSpy('updateNumeration');
+
+    $controller('book', {
+      $scope: scope,
+      updateNumeration: updateNumeration
+    });
+
     scope.book = {
       title: 'Libro 1',
       sections: [{
@@ -37,18 +44,11 @@ describe('Book controller', function () {
         }]
       }]
     };
-
-    updateNumeration = jasmine.createSpy('updateNumeration');
-
-    $controller('book', {
-      $scope: scope,
-      updateNumeration: updateNumeration
-    });
   }));
 
   describe('on instance', function(){
     it('should calculate numeration for the sections of the book', function(){
-      expect(updateNumeration).toHaveBeenCalledWith(scope.book.sections);
+      expect(updateNumeration).toHaveBeenCalled();
     });
   });
 

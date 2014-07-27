@@ -1,11 +1,12 @@
 'use strict';
 
 angular.module('app', [
-  'ngAnimate', 
-  'ngSanitize', 
-  'ngRoute', 
+  'ngAnimate',
+  'ngSanitize',
+  'ngRoute',
   'ui.tree',
-  'cfp.hotkeys'
+  'cfp.hotkeys',
+  'firebase'
 ])
   .config(function ($routeProvider) {
     $routeProvider
